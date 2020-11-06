@@ -1,0 +1,18 @@
+const form = document.querySelector('#form');
+const input = document.querySelector('#input');
+const todos = document.querySelector('#todos');
+
+//addint an eventlistener to the form element
+form.addEventListener('submit',(e)=> {
+  //this helps so that the form won't submit on its own
+  e.preventDefault();
+  //getting the exact valuse inside the input element
+  const todoText = input.value;
+
+  if(todoText){
+   const todoE1 = document.createElement("li");
+   todoE1.innerText = todoText;
+   todos.appendChild(todoE1);
+  }
+
+})
