@@ -13,6 +13,10 @@ form.addEventListener('submit',(e)=> {
    const todoE1 = document.createElement("li");
    todoE1.innerText = todoText;
    todos.appendChild(todoE1);
+   input.value= '';
+   todoE1.addEventListener('click', (e)=>{
+     todoE1.classList.toggle('completed');
+   })
   }
 
 })
