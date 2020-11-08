@@ -6,7 +6,11 @@ const todos = document.querySelector('#todos');
 form.addEventListener('submit',(e)=> {
   //this helps so that the form won't submit on its own
   e.preventDefault();
-  //getting the exact valuse inside the input element
+  addToDo()
+})
+
+  function addToDo(){
+    //getting the exact valuse inside the input element
   const todoText = input.value;
 
   if(todoText){
@@ -17,6 +21,11 @@ form.addEventListener('submit',(e)=> {
    todoE1.addEventListener('click', (e)=>{
      todoE1.classList.toggle('completed');
    })
+   
+   todoE1.addEventListener('contextmenu', (e)=>{
+     todoE1.remove();
+   })
   }
 
-})
+  }
+  
