@@ -7,4 +7,13 @@
 body{
   margin: 0;
   font-family: "poppins", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #7bdaf3;
+}
+
+.notes{
+  width: 400px;
+  height: 400px;
+  background-color: #fff;
 }
