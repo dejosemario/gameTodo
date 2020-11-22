@@ -1,10 +1,26 @@
 //selecting the documents
-const notesE1 = document.querySelector('.notes')
-const editBtn = document.querySelector('.edit');
-const delBtn = document.querySelector('.delete');
+const addNote = document.querySelector('#add')
+addNote.addEventListener('click', ()=>{
+  console.log('ljk');
+  addNewNote();
+})
 
-const main = document.querySelector('.main');
-const textArea = notesE1.querySelector('textarea')
+//adding new note
+function addNewNote(){
+  const note = document.createElement('div');
+  note.classList.add('note');
+  note.innerHTML = `
+    <div class="notes">
+      <div class="tools">
+        <button class="edit"><i class="fas fa-edit"></i></button>
+        <button class="delete"><i class="fas fa-trash-alt"></i></button>
+      </div>
+      <div class="main hidden"></div>
+      <textarea></textarea>    
+    </div> 
+  `
+  document.add.appendChild('note')
+}
 
 //toggling between main and textarea
 editBtn.addEventListener('click', ()=>{
@@ -16,3 +32,4 @@ textArea.addEventListener('input', (e)=>{
   const {value} = e.target;
   main.innerHTML = marked(value);
 })
+
