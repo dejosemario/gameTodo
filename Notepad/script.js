@@ -18,20 +18,24 @@ function addNewNote(){
     <textarea></textarea>    
     </div> 
   `
-   const notesE1 = note.querySelector('.notes')
-  const editBtn = note.querySelector('.edit');
-  const delBtn = note.querySelector('.delete');
+const notesE1 = note.querySelector('.notes')
+const editBtn = note.querySelector('.edit');
+const delBtn = note.querySelector('.delete');
 
-  const main = document.querySelector('.main');
-  const textArea = notesE1.querySelector('textarea');
+const main = notesE1.querySelector('.main');
+const textArea = notesE1.querySelector('textarea');
 
-  const addNote = document.querySelector('#add');
+const addNote = document.querySelector('#add');
 
-//toggling between main and textarea
 //toggling between main and textarea
 editBtn.addEventListener('click', ()=>{
   main.classList.toggle('hidden');
   textArea.classList.toggle('hidden');
+})
+
+//deleting the todo note
+delBtn.addEventListener('click',()=> {
+  note.remove();
 })
 
 textArea.addEventListener('input', (e)=>{
