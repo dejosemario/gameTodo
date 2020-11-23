@@ -1,11 +1,19 @@
 //selecting the documents
 const addNote = document.querySelector('#add');
+const notes = JSON.parse(localStorage.getItem('notes'));
+
+if(notes){
+  notes.forEach(note =>{
+    addNewNote(note);
+  })
+}
+
 addNote.addEventListener('click', ()=>{
   addNewNote();
 })
 
 //adding new note
-function addNewNote(){
+function addNewNote(text = ""){
   const note = document.createElement('div');
   note.classList.add('note');
   note.innerHTML = `
@@ -24,6 +32,8 @@ const editBtn = note.querySelector('.edit');
 const delBtn = note.querySelector('.delete');
 const main = notesE1.querySelector('.main');
 const textArea = notesE1.querySelector('textarea');
+textArea.value = text;
+main.innerHTML = marked(text);
 
   //toggling between main and textarea
 editBtn.addEventListener('click', ()=>{
