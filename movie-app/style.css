@@ -71,11 +71,11 @@ header {
 
 .overview {
   /* margin: 0.5rem; */
-  overflow: hidden;
+  overflow: auto;
   padding: 1.5rem;
   background-color: rgb(52, 52, 83);
   position: absolute;
-  /* top: 0; */
+  max-height: 100vh;
   right: 0;
   left: 0;
   bottom: 0;
