@@ -21,7 +21,8 @@ getMovies(APIURL);
 
 function showMovies(movies){
   //clear the movies
-   main.innerHTML = '';
+   main.innerHTML = ''; 
+
   movies.forEach((movie) =>{
     const {poster_path, title, vote_average}= movie
     const movieE1 = document.createElement('div'); 
@@ -31,7 +32,11 @@ function showMovies(movies){
         <div class="movie-info">
           <h3>${title}</h3>
           <span class="${getColors(vote_average)}">${vote_average}</span>
-        </div>      
+        </div> 
+        <div class = "overview">
+          <h4 style = "margin: 0; color: #eee; font-size:1.2rem;">overview: </h4>
+           ${movie.overview}
+        </div>     
     `
     main.appendChild(movieE1);
    })
