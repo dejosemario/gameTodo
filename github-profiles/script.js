@@ -30,3 +30,15 @@ function createUserCard(user){
   main.innerHTML = cardHtml;
 }
 
+//adding an event listen to the form and passing in th getuser function
+form .addEventListener('submit', (e)=>{
+  e.preventDefault();
+  
+  const user = input.value;
+
+  if(user){
+    getUser(user);
+
+    input.value = '';
+  }
+})
