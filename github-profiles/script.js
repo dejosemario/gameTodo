@@ -1,28 +1,31 @@
 const APIURL = 'https://api.github.com/users/';
 const main = document.getElementById('main');
 const form = document.getElementById('form');
-const  input = document.getElementById('input');
+const input = document.getElementById('input');
+
+getUser('dejosemario');
 //creating an async function to help get the users profile
-async function getUser(user){
+async function getUser(user) {
   const resp = await fetch(APIURL + user);
   const respData = await resp.json();
-  
+
   createUserCard(respData);
-  
 }
 
 //creating a function that creates the card dynmaically
-function createUserCard(user){
+function createUserCard(user) {
   const cardHtml = `
   <div class="card">
-    <img src="${user.avatar_url}" alt="${user.name}">
-    <div>
+    <div class="img-contianer">
+     <img src="${user.avatar_url}" alt="${user.name}" class="avatar">
+    </div>    
+    <div class="user-info">
       <h2>${user.name}</h2>
       <p>${user.bio}</p>
-      <ul>
-        <li>${user.followers}</li>
-        <li>${user.following}</li>
-        <li>${user.public_repos}</li>
+      <ul class="info">
+        <li>${user.followers}<strong>Followers</strong></li>
+        <li>${user.following}<strong>Following</strong></li>
+        <li>${user.public_repos}<strong>Repo</strong></li>
       </ul>
     </div> 
   </div>
@@ -31,14 +34,16 @@ function createUserCard(user){
 }
 
 //adding an event listen to the form and passing in th getuser function
-form .addEventListener('submit', (e)=>{
+form.addEventListener('submit', (e) => {
   e.preventDefault();
-  
+
   const user = input.value;
 
-  if(user){
+  if (user) {
     getUser(user);
 
     input.value = '';
   }
-})
+});
+
+console.log('emeka');
