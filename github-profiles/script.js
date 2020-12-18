@@ -41,7 +41,21 @@ function createUserCard(user) {
   `;
   main.innerHTML = cardHtml;
 }
-
+// addReposToCard() function and getting the individual array usind forEach method.
+function addReposToCard(repos) {
+  const reposE1 = document.getElementById('repos');
+  repos.forEach((repo) => {
+    const repoE1 = document.createElement('a');
+    repoE1.classList.add('repo');
+    repoE1.style.color = 'blue';
+    repoE1.href = repo.html_url;
+    repoE1.target = '_blank';
+    repoE1.innerText = repo.name;
+    reposE1.appendChild(repoE1);
+    // console.log(repo.html_url);
+  });
+  
+}
 //adding an event listen to the form and passing in th getuser function
 form.addEventListener('submit', (e) => {
   e.preventDefault();
