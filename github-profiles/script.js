@@ -3,9 +3,7 @@ const main = document.getElementById('main');
 const form = document.getElementById('form');
 const input = document.getElementById('input');
 
-getUser('dejosemario');
 //creating an async function to help get the users profile
-
 async function getUser(user) {
   const resp = await fetch(APIURL + user);
   const respData = await resp.json();
@@ -42,6 +40,7 @@ function createUserCard(user) {
   `;
   main.innerHTML = cardHtml;
 }
+
 // addReposToCard() function and getting the individual array usind forEach method.
 function addReposToCard(repos) {
   const reposE1 = document.getElementById('repos');
@@ -50,13 +49,11 @@ function addReposToCard(repos) {
     b.stargazers_count-a.stargazers_count
   ).slice(0,9).forEach((repo) => {
     const repoE1 = document.createElement('a');
-    repoE1.classList.add('repo');
-    // repoE1.style.color = 'blue';
+    repoE1.classList.add('repo');   
     repoE1.href = repo.html_url;
     repoE1.target = '_blank';
     repoE1.innerText = repo.name;
-    reposE1.appendChild(repoE1);
-    // console.log(repo.html_url);
+    reposE1.appendChild(repoE1);    
   });
   
 }
@@ -73,4 +70,4 @@ form.addEventListener('submit', (e) => {
   }
 });
 
-// console.log('emeka');
+
