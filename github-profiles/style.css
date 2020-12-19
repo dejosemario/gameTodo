@@ -45,11 +45,7 @@ input:focu {
   color: white;
   max-width: 800px;
 }
-.img-contianer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .avatar {
   border: 10px solid #282836;
   border-radius: 50%;
@@ -78,7 +74,28 @@ input:focu {
   display: flex;
   align-items: center;
 }
+
 .user-info ul li strong {
   font-size: 0.85rem;
   margin-left: 0.5rem;
 }
+
+.repo{
+  background-color: #34284b;
+  border-radius: 2px;
+  display: inline-block;
+  color: #fff;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+ color: #7d7dce;
+}
+

@@ -24,7 +24,7 @@ async function getRepos(username) {
 function createUserCard(user) {
   const cardHtml = `
   <div class="card">
-    <div class="img-contianer">
+    <div>
      <img src="${user.avatar_url}" alt="${user.name}" class="avatar">
     </div>    
     <div class="user-info">
@@ -35,6 +35,7 @@ function createUserCard(user) {
         <li>${user.following}<strong>Following</strong></li>
         <li>${user.public_repos}<strong>Repo</strong></li>
       </ul>
+      <h4>Repos:</h4>
       <div id="repos"></div>
     </div> 
   </div>
@@ -44,10 +45,13 @@ function createUserCard(user) {
 // addReposToCard() function and getting the individual array usind forEach method.
 function addReposToCard(repos) {
   const reposE1 = document.getElementById('repos');
-  repos.forEach((repo) => {
+  //trying to sort the repos with how many stars gotten from lowest to highest
+  repos.sort((a,b)=>
+    b.stargazers_count-a.stargazers_count
+  ).slice(0,9).forEach((repo) => {
     const repoE1 = document.createElement('a');
     repoE1.classList.add('repo');
-    repoE1.style.color = 'blue';
+    // repoE1.style.color = 'blue';
     repoE1.href = repo.html_url;
     repoE1.target = '_blank';
     repoE1.innerText = repo.name;
