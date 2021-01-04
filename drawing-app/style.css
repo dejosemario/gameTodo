@@ -17,3 +17,22 @@ body{
 canvas{
   border: 2px solid #000;
 }
+
+.tool-box{
+  width: 504px;
+  background-color: rgb(102, 102, 214);
+  box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+  padding: 0.5rem;
+  /* display: flex; */
+  /* justify-content: initial; */
+}
+ 
+.tool-box > *{
+  display: inline-block;
+  font-size: 1.5rem;
+  border: none;
+  background-color: #fff;
+  padding: 0.25rem;
+  width: 50px;
+  height: 50px;
+}
